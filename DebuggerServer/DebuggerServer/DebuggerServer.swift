@@ -102,7 +102,7 @@ public final class RemoteDebugger: NSObject, NetServiceBrowserDelegate {
         browser.searchForServices(ofType: "_debug._tcp", inDomain: "local")
     }
     
-    private func netServiceBrowser(_ browser: NetServiceBrowser, didFind service: NetService, moreComing: Bool) {
+    func netServiceBrowser(_ browser: NetServiceBrowser, didFind service: NetService, moreComing: Bool) {
         var input: InputStream?
         var output: OutputStream?
         service.getInputStream(&input, outputStream: &output)
