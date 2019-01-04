@@ -164,11 +164,6 @@ class ViewController: NSViewController, NSTableViewDelegate {
     }
     var actionsDataSource: ArrayDataSource!
     
-    @IBAction func resetToState(_ sender: Any) {
-        guard let s = selection else { return }
-        service.write(json: s.1)
-    }
-    
     @IBAction func sliderChanged(_ sender: NSSlider) {
         print(sender.intValue)
     }

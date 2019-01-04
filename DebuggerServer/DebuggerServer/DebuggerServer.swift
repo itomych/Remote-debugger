@@ -96,13 +96,13 @@ public final class RemoteDebugger: NSObject, NetServiceBrowserDelegate {
     let queue = DispatchQueue(label: "remoteDebugger")
     var writer: BufferedWriter?
     
-    override init() {
+    public override init() {
         super.init()
         browser.delegate = self
         browser.searchForServices(ofType: "_debug._tcp", inDomain: "local")
     }
     
-    func netServiceBrowser(_ browser: NetServiceBrowser, didFind service: NetService, moreComing: Bool) {
+    public func netServiceBrowser(_ browser: NetServiceBrowser, didFind service: NetService, moreComing: Bool) {
         var input: InputStream?
         var output: OutputStream?
         service.getInputStream(&input, outputStream: &output)
